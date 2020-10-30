@@ -113,7 +113,7 @@ async function generatePdf(parameters) {
 
   reasons.split(',').forEach((reason) => {
     reason = reason.trim()
-    reasons in ys && drawText('x', 84, ys[reason], 18)
+    reason in ys && drawText('x', 84, ys[reason], 18)
   })
 
   drawText(city, 105, 177, getIdealFontSize(font, city, 83, 7, 11) || 7)
