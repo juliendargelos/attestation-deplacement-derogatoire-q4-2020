@@ -19,7 +19,7 @@ module.exports.handler = async ({ queryStringParameters: {
     isBase64Encoded: true,
     headers: {
       'Content-Type': 'application/pdf',
-      'Content-Disposition': `attachment; filename="attestation-${
+      'Content-Disposition': `inline; filename="attestation-${
         formatDateAlternate(date, '-')
       }-${
         formatTime(date, '-')
