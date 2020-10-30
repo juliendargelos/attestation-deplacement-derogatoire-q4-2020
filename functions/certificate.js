@@ -67,9 +67,7 @@ async function generatePdf(parameters) {
 
   const date = new Date(parameters.date)
   const birthday = new Date(parameters.birthday)
-
-  const existingPdfBytes = await fs.readFile(`${__dirname}/../public/certificate.pdf`)
-  const pdfDoc = await PDFDocument.load(existingPdfBytes)
+  const pdfDoc = await PDFDocument.load(pdfBase)
   const qrCode = await pdfDoc.embedPng(await QRCode.toDataURL([
     `Cree le: ${formatDateAlternate(date, '-')} a ${formatTime(date)}`,
     `Nom: ${lastname}`,
